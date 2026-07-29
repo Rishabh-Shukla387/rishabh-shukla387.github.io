@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Rishabh Shukla</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class'
+};
+
+(function () {
+  const saved = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (saved === "dark" || (!saved && prefersDark)) {
+    document.documentElement.classList.add("dark");
+  }
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { font-family: 'Inter', sans-serif; }
+  .panel{background:#fff;border:1px solid #e2e8f0;}
+.dark .panel{background:#0d1220;border-color:#1b2333;}
+.thumb{background:#f8fafc;border:1px solid #e2e8f0;}
+.dark .thumb{background:#0a0e18;border-color:#1b2333;}
+.tag-chip{background:#eff6ff;color:#2563eb;font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;border:1px solid #bfdbfe;}
+.dark .tag-chip{background:#161d2e;color:#93a3c2;border-color:#232c40;}
+.card-row:hover{background:#f8fafc;}
+.dark .card-row:hover{background:#10182b;}
+.glow{background:radial-gradient(circle at 30% 30%,rgba(59,130,246,.12),transparent 60%);}
+.dark .glow{background:radial-gradient(circle at 30% 30%,rgba(59,130,246,.18),transparent 60%);}
+.star{fill:#93c5fd;}
+.dark .star{fill:#3b5378;}
+</style>
+</head>
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-200 transition-colors duration-300">
+
+<!-- NAVBAR -->
+<header class="flex items-center justify-between px-10 py-4 border-b border-slate-100 dark:border-slate-800 sticky top-0 bg-white/90 dark:bg-slate-950/90 backdrop-blur z-50">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 flex items-center justify-center font-bold text-sm">RS</div>
+    <div class="leading-tight">
+      <div class="font-semibold text-slate-900 dark:text-white">Rishabh Shukla</div>
+      <div class="text-xs text-blue-600 dark:text-blue-400 font-medium">Mathematics Instructor</div>
+    </div>
+  </div>
+
+  <nav class="hidden md:flex items-center gap-8 text-sm text-slate-600 dark:text-slate-300 font-medium">
+    <a href="index.html" class="hover:text-slate-900 dark:hover:text-white">Home</a>
+    <a href="index.html#about" class="hover:text-slate-900 dark:hover:text-white">About</a>
+    <a href="teaching.html" class="hover:text-slate-900 dark:hover:text-white">Teaching</a>
+    <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-blue-600 dark:border-blue-400 pb-1">Projects</a>
+    <a href="qualifications.html" class="hover:text-slate-900 dark:hover:text-white">Qualifications</a>
+    <a href="index.html#contact" class="hover:text-slate-900 dark:hover:text-white">Contact</a>
+  </nav>
+
+  <div class="flex items-center gap-3">
+    <button id="theme-toggle" aria-label="Toggle dark mode" class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
+      <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+
+    <a href="Rishabh_Shukla_Resume.pdf" download class="flex items-center gap-2 bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-slate-800 dark:hover:bg-blue-700 transition">
+      Resume
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden px-10 py-16 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+  <div class="absolute inset-0 glow pointer-events-none"></div>
+  <div class="relative z-10">
+    <span class="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 border border-blue-500/20">
+      <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> My Work
+    </span>
+    <h1 class="text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mb-5">Projects</h1>
+    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-md">
+      A collection of educational platforms, interactive mathematics tools, and AI automation workflows built to enhance learning and problem-solving.
+    </p>
+  </div>
+
+  <div class="relative z-10 flex justify-center items-center h-72">
+    <svg viewBox="0 0 10 10" class="absolute w-full h-full opacity-60" preserveAspectRatio="none">
+      <circle class="star" cx="0.6" cy="1.2" r="0.04"/>
+      <circle class="star" cx="9.2" cy="0.6" r="0.04"/>
+      <circle class="star" cx="8.6" cy="4.6" r="0.05"/>
+      <circle class="star" cx="1.4" cy="8.6" r="0.04"/>
+      <circle class="star" cx="0.3" cy="5.6" r="0.03"/>
+      <circle class="star" cx="9.6" cy="7.8" r="0.04"/>
+    </svg>
+
+    <!-- laptop -->
+    <svg viewBox="0 0 420 260" class="w-full max-w-lg relative z-10">
+      <rect x="90" y="20" width="240" height="150" rx="10" fill="#111827" stroke="#2c3752" stroke-width="2"/>
+      <rect x="100" y="30" width="220" height="130" rx="4" fill="#0a0e18"/>
+      <g stroke-width="3" stroke-linecap="round">
+        <line x1="112" y1="45" x2="180" y2="45" stroke="#f59e0b"/>
+        <line x1="188" y1="45" x2="230" y2="45" stroke="#3b82f6"/>
+        <line x1="112" y1="58" x2="220" y2="58" stroke="#334155"/>
+        <line x1="112" y1="71" x2="160" y2="71" stroke="#3b82f6"/>
+        <line x1="168" y1="71" x2="260" y2="71" stroke="#334155"/>
+        <line x1="112" y1="84" x2="150" y2="84" stroke="#f59e0b"/>
+        <line x1="112" y1="97" x2="240" y2="97" stroke="#334155"/>
+        <line x1="112" y1="110" x2="180" y2="110" stroke="#3b82f6"/>
+        <line x1="112" y1="123" x2="200" y2="123" stroke="#334155"/>
+        <line x1="112" y1="136" x2="150" y2="136" stroke="#f59e0b"/>
+      </g>
+      <path d="M60 170 L360 170 L390 200 L30 200 Z" fill="#1a2338" stroke="#2c3752" stroke-width="2"/>
+      <rect x="150" y="170" width="120" height="6" rx="3" fill="#0a0e18"/>
+    </svg>
+
+    <!-- floating badges -->
+    <div class="absolute left-2 top-4 w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-slate-900 dark:text-white font-bold text-xl shadow-lg shadow-blue-900/40">fx</div>
+    <div class="absolute right-0 top-8 w-14 h-14 rounded-2xl bg-indigo-600 flex items-center justify-center text-slate-900 dark:text-white font-bold text-2xl shadow-lg shadow-indigo-900/40">&Sigma;</div>
+    <div class="absolute left-6 bottom-4 w-12 h-12 rounded-2xl bg-emerald-600 flex items-center justify-center text-slate-900 dark:text-white shadow-lg shadow-emerald-900/40">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+    </div>
+    <div class="absolute right-4 bottom-0 w-16 h-16 rounded-2xl bg-orange-500 flex items-center justify-center text-slate-900 dark:text-white font-extrabold text-xl shadow-lg shadow-orange-900/40">AI</div>
+  </div>
+</section>
+
+<!-- EDUCATIONAL PLATFORMS -->
+<section class="max-w-7xl mx-auto px-10 pb-6">
+  <div class="panel rounded-2xl p-8">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h6a4 4 0 014 4v12a3 3 0 00-3-3H2z"/><path d="M22 4h-6a4 4 0 00-4 4v12a3 3 0 013-3h7z"/></svg>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-blue-400">Educational Platforms</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Platforms designed to deliver and enhance digital learning experiences.</p>
+      </div>
+    </div>
+
+    <a href="#" class="card-row flex items-center gap-6 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+      <div class="thumb w-56 h-32 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden">
+        <svg viewBox="0 0 200 120" class="w-full h-full">
+          <rect width="200" height="120" fill="#0a0e18"/>
+          <path d="M20 25 L95 20 L95 95 L20 100 Z" fill="#f4f4f2"/>
+          <path d="M180 25 L105 20 L105 95 L180 100 Z" fill="#e2e2df"/>
+          <line x1="30" y1="35" x2="85" y2="32" stroke="#c9c9c4" stroke-width="1.5"/>
+          <line x1="30" y1="45" x2="85" y2="42" stroke="#c9c9c4" stroke-width="1.5"/>
+          <line x1="30" y1="55" x2="85" y2="52" stroke="#c9c9c4" stroke-width="1.5"/>
+          <rect x="140" y="15" width="30" height="22" fill="#0a0e18" stroke="#2c3752"/>
+          <rect x="140" y="40" width="30" height="22" fill="#0a0e18" stroke="#2c3752"/>
+          <rect x="140" y="65" width="30" height="22" fill="#0a0e18" stroke="#2c3752"/>
+          <rect x="110" y="15" width="26" height="22" fill="#0a0e18" stroke="#2c3752"/>
+          <rect x="110" y="40" width="26" height="22" fill="#0a0e18" stroke="#2c3752"/>
+        </svg>
+      </div>
+      <div class="flex-1">
+        <h3 class="text-slate-900 dark:text-white font-bold mb-2">Secure Flipbook Reader</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mb-3">A secure web-based flipbook/eBook reader that streams pages on demand with smooth page-flipping, progress tracking, and content protection.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag-chip">Next.js</span><span class="tag-chip">React</span><span class="tag-chip">Tailwind CSS</span><span class="tag-chip">Node.js</span>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-500 dark:text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- MATHEMATICS TOOLS -->
+<section class="max-w-7xl mx-auto px-10 pb-6">
+  <div class="panel rounded-2xl p-8">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l4 4M20 4l-4 4M4 20l4-4M20 20l-4-4"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-emerald-400">Mathematics Tools</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400">Interactive visualizers and calculators for mathematics concepts.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <!-- Graph Visualizer -->
+      <a href="#" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center">
+          <svg viewBox="0 0 60 60" class="w-10 h-10">
+            <line x1="30" y1="14" x2="14" y2="46" stroke="#334155" stroke-width="1.5"/>
+            <line x1="30" y1="14" x2="46" y2="46" stroke="#334155" stroke-width="1.5"/>
+            <line x1="14" y1="46" x2="46" y2="46" stroke="#334155" stroke-width="1.5"/>
+            <line x1="30" y1="14" x2="30" y2="46" stroke="#334155" stroke-width="1.5"/>
+            <circle cx="30" cy="14" r="5" fill="#f59e0b"/>
+            <circle cx="14" cy="46" r="5" fill="#3b82f6"/>
+            <circle cx="46" cy="46" r="5" fill="#8b5cf6"/>
+            <circle cx="30" cy="46" r="5" fill="#10b981"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Graph Visualizer</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Visualize graphs, traverse algorithms (BFS, DFS), shortest paths, and more with interactive controls.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <!-- Matrix Visualizer -->
+      <a href="#" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center p-1.5">
+          <div class="grid grid-cols-4 gap-0.5 w-full">
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">2</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">3</span>
+            <span class="bg-emerald-950 text-emerald-400 text-[8px] text-center rounded-sm">2</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Matrix Visualizer</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Perform matrix operations and visualize concepts like multiplication, transpose, determinant, and inverse.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <!-- Modulo Arithmetic Lab -->
+      <a href="#" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex flex-col items-center justify-center gap-1">
+          <span class="text-amber-400 font-mono text-[10px]">a &equiv; b</span>
+          <span class="text-amber-400/70 font-mono text-[9px]">(mod n)</span>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Modulo Arithmetic Lab</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Explore modular arithmetic concepts with interactive examples and real-world applications.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <!-- Error Detection Visualizer -->
+      <a href="https://errordetection-visualizer.netlify.app/" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center p-1.5">
+          <div class="grid grid-cols-5 gap-0.5 text-[7px] font-mono text-slate-500 dark:text-slate-400 leading-none">
+            <span>1</span><span>1</span><span>0</span><span>1</span><span>1</span>
+            <span>1</span><span>1</span><span>0</span><span>1</span><span>1</span>
+            <span>0</span><span>1</span><span class="bg-emerald-500 text-slate-900 dark:text-white rounded-sm text-center">1</span><span>1</span><span>0</span>
+            <span>1</span><span>1</span><span>0</span><span>1</span><span>1</span>
+            <span>1</span><span>0</span><span>1</span><span>0</span><span>1</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Error Detection Visualizer</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Understand error detection techniques like Parity, Checksum, CRC, and Hamming Code visually.</p>
+        </div>
+      </a>
+
+      <!-- Distribution Calculator -->
+      <a href="https://distribution-calculator.netlify.app" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center">
+          <svg viewBox="0 0 60 40" class="w-12 h-9">
+            <path d="M2 36 C 16 36 20 4 30 4 C 40 4 44 36 58 36" fill="none" stroke="#3b82f6" stroke-width="2"/>
+            <line x1="2" y1="36" x2="58" y2="36" stroke="#334155" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Distribution Calculator</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Calculate and visualize probability distributions with real-time graphs and statistics.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <!-- Z-Score Visualization -->
+      <a href="https://zscore-visualization.netlify.app/" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center">
+          <svg viewBox="0 0 60 40" class="w-12 h-9">
+            <path d="M2 36 C 16 36 20 4 30 4 L30 36 Z" fill="#f59e0b" opacity="0.6"/>
+            <path d="M30 4 C 40 4 44 36 58 36 L30 36 Z" fill="#3b82f6" opacity="0.6"/>
+            <line x1="30" y1="4" x2="30" y2="36" stroke="#e2e8f0" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Z-Score Visualization</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Visualize Z-scores on the normal distribution curve with dynamic interactions and explanations.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <!-- Z & Confidence Interval Calculator -->
+      <a href="https://zscore-calculator.netlify.app/" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex flex-col justify-center gap-1 p-2">
+          <span class="text-blue-400 text-[7px] font-semibold">Z &amp; Confidence</span>
+          <span class="text-blue-400 text-[7px] font-semibold -mt-1">Interval Calculator</span>
+          <span class="text-slate-500 dark:text-slate-400 text-[7px] mt-0.5">Confidence</span>
+          <span class="text-slate-900 dark:text-white font-bold text-xs">1.96</span>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Z &amp; Confidence Interval Calculator</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Calculate Z-scores, confidence intervals, and margin of error with ease and accuracy.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+
+      <!-- Cartesian <-> Polar Converter -->
+      <a href="https://cartesian-to-polar.netlify.app/" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex items-center justify-center">
+          <svg viewBox="0 0 60 60" class="w-11 h-11">
+            <line x1="6" y1="30" x2="54" y2="30" stroke="#334155" stroke-width="1"/>
+            <line x1="30" y1="6" x2="30" y2="54" stroke="#334155" stroke-width="1"/>
+            <line x1="30" y1="30" x2="46" y2="14" stroke="#64748b" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <circle cx="46" cy="14" r="3" fill="#f59e0b"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Cartesian &harr; Polar Converter</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Convert between Cartesian and Polar coordinates with step-by-step visual representation.</p>
+        </div>
+      </a>
+
+      <!-- Spam Detection using Bayes' Theorem -->
+      <a href="https://spam-detection-word.netlify.app/" class="card-row flex items-start gap-4 rounded-xl p-4 transition border border-transparent hover:border-slate-700">
+        <div class="thumb w-16 h-16 rounded-lg flex-shrink-0 flex flex-col items-center justify-center gap-1 relative overflow-hidden">
+          <span class="absolute top-1 right-1 bg-red-500 text-slate-900 dark:text-white text-[6px] font-bold px-1 rounded-sm">SPAM</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span class="text-slate-500 dark:text-slate-400 text-[6px]">P(Spam|Word)</span>
+          <span class="text-slate-500 dark:text-slate-400 text-[6px]">P(Ham|Word)</span>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-1">Spam Detection using Bayes' Theorem</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400">Learn Naive Bayes classification through an interactive spam detection simulator.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AI & AUTOMATION -->
+<section class="max-w-7xl mx-auto px-10 pb-10">
+  <div class="panel rounded-2xl p-8">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="12" rx="3"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1" fill="currentColor"/></svg>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-purple-400">AI &amp; Automation</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400">AI-powered tools and automation workflows to simplify and accelerate tasks.</p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <!-- Company Classification Automations -->
+      <div class="card-row rounded-xl p-4 border border-transparent hover:border-slate-700 transition">
+        <div class="thumb w-14 h-14 rounded-lg mb-4 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="10" height="20"/><rect x="14" y="9" width="6" height="13"/><line x1="7" y1="6" x2="7" y2="6.01"/><line x1="10" y1="6" x2="10" y2="6.01"/><line x1="7" y1="10" x2="7" y2="10.01"/><line x1="10" y1="10" x2="10" y2="10.01"/></svg>
+        </div>
+        <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-2">Company Classification Automations</h3>
+        <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">Automated workflow that classifies companies using AI models and structured data pipelines.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag-chip">AI</span><span class="tag-chip">n8n</span><span class="tag-chip">APIs</span>
+        </div>
+      </div>
+
+      <!-- n8n AI Workflow Automation -->
+      <div class="card-row rounded-xl p-4 border border-transparent hover:border-slate-700 transition">
+        <div class="thumb w-14 h-14 rounded-lg mb-4 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 10.8L15.8 7.2M8.2 13.2l7.6 3.6"/></svg>
+        </div>
+        <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-2">n8n AI Workflow Automation</h3>
+        <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">Custom n8n automations integrating AI APIs, Google Sheets, and other services to streamline processes.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag-chip">n8n</span><span class="tag-chip">AI</span><span class="tag-chip">Google Sheets</span>
+        </div>
+      </div>
+
+      <!-- AI Teaching Assistant -->
+      <div class="card-row rounded-xl p-4 border border-transparent hover:border-slate-700 transition">
+        <div class="flex items-center justify-between mb-4">
+          <div class="thumb w-14 h-14 rounded-lg flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="7" width="14" height="12" rx="3"/><circle cx="9.5" cy="13" r="1.2" fill="currentColor"/><circle cx="14.5" cy="13" r="1.2" fill="currentColor"/><path d="M12 7V3"/><circle cx="12" cy="2" r="1" fill="currentColor"/></svg>
+          </div>
+          <span class="text-[10px] font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/30 px-2 py-1 rounded-full flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Planned
+          </span>
+        </div>
+        <h3 class="text-slate-900 dark:text-white font-semibold text-sm mb-2">AI Teaching Assistant</h3>
+        <p class="text-xs text-slate-600 dark:text-slate-400 mb-4">An AI-powered assistant to help students learn, solve problems, and understand concepts interactively.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag-chip">AI</span><span class="tag-chip">Education</span><span class="tag-chip">Future</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="max-w-7xl mx-auto px-10 pb-16">
+  <div class="panel rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <div class="w-10 h-10 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center flex-shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.5.4.8 1 .8 1.6v.2h6.4v-.2c0-.6.3-1.2.8-1.6A7 7 0 0012 2z"/></svg>
+      </div>
+      <p class="text-slate-600 dark:text-slate-300 text-sm max-w-lg">
+        Building tools that <span class="text-blue-400">make learning interactive, intuitive, and impactful.</span><br>
+        <span class="text-slate-500 dark:text-slate-400">More projects and updates coming soon!</span>
+      </p>
+    </div>
+    <a href="index.html#contact" class="flex items-center gap-2 border border-blue-500/60 text-blue-400 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-blue-500/10 transition flex-shrink-0">
+      Let's Connect
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="text-center text-sm text-slate-600 py-10 border-t border-slate-100 dark:border-slate-800">
+  © 2026 Rishabh Shukla. All rights reserved.
+</footer>
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+toggle.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+
+    localStorage.setItem(
+        "theme",
+        document.documentElement.classList.contains("dark")
+            ? "dark"
+            : "light"
+    );
+});
+</script>
+</body>
+</html>
